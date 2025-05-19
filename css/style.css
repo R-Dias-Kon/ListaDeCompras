@@ -48,7 +48,7 @@ body
     margin-left:   4em;
 }
 
-.item
+.item, .recipe
 {
     margin-bottom: 0.66em;
     margin-top: 0.66em;
@@ -56,15 +56,15 @@ body
 
 .recipeName
 {
-    width: 20.06em;
+    width: 21.93em;
 }
 .subitemName
 {
-    width: 17.56em;
+    width: 19.12em;
 }
 .itemName
 {
-    width: 22.36em;
+    width: 23.9em;
 }
 
 .quantity

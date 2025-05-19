@@ -1,0 +1,148 @@
+let items = 0;
+let recipes = 0;
+
+let subitems = {};
+
+document.getElementById('addItem').onclick = addItem;
+function addItem(e)
+{
+    e.preventDefault();
+
+    let list = document.getElementById('list');
+
+    let item = document.createElement('li');
+    item.classList.add('item');
+    item.id = `item${items++}`;
+
+    let itemName = document.createElement('input');
+    itemName.classList.add('itemName');
+    itemName.id = item.id+'_name';
+    itemName.setAttribute('name'    , item.id+'_name'       );
+    itemName.setAttribute('type'           , 'text'         );
+    itemName.setAttribute('placeholder'    , 'Item'         );
+    
+    let quantity = document.createElement('input');
+    quantity.classList.add('quantity');
+    quantity.id = item.id+'_quantity';
+    quantity.setAttribute('name'       , item.id+'_quantity');
+    quantity.setAttribute('type'       , 'number'           );
+    quantity.setAttribute('value'      , 0                  );
+    quantity.setAttribute('min'        , 0                  );
+    quantity.setAttribute('max'        , 99                 );
+    quantity.setAttribute('placeholder', 'quantidade'       );
+    quantity.setAttribute('required'   , ''                 );
+
+    let remove = document.createElement('button');
+    remove.setAttribute('type', 'button');
+    remove.id = item.id+'_remove';
+    remove.classList.add('remove');
+    remove.append('-');
+
+    item.append(itemName);
+    item.append(quantity);
+    item.append(remove  );
+
+    list.append(item    );
+
+    console.log(items, recipes, subitems);
+}
+
+document.getElementById('addRecipe').onclick = addRecipe;
+function addRecipe(e)
+{
+    e.preventDefault();
+
+    let list = document.getElementById('list');
+
+    let recipe = document.createElement('li');
+    recipe.classList.add('recipe');
+    subitems[recipes] = 0;
+    recipe.id = `recipe${recipes++}`;
+
+    let recipeName = document.createElement('input');
+    recipeName.classList.add('recipeName');
+    recipeName.id = recipe.id+'_name';
+    recipeName.setAttribute('name'    , recipe.id+'_name'   );
+    recipeName.setAttribute('type'           , 'text'       );
+    recipeName.setAttribute('placeholder'    , 'Receita'    );
+    
+    let addSubitemButton = document.createElement('button');
+    addSubitemButton.setAttribute('type', 'button');
+    addSubitemButton.id = recipe.id+'_addSubitem';
+    addSubitemButton.classList.add('addSubitem');
+    addSubitemButton.append('+');
+
+    let quantity = document.createElement('input');
+    quantity.classList.add('quantity');
+    quantity.id = recipe.id+'_quantity';
+    quantity.setAttribute('name'       , recipe.id+'_quantity');
+    quantity.setAttribute('type'       , 'number'           );
+    quantity.setAttribute('value'      , 0                  );
+    quantity.setAttribute('min'        , 0                  );
+    quantity.setAttribute('max'        , 99                 );
+    quantity.setAttribute('placeholder', 'quantidade'       );
+    quantity.setAttribute('required'   , ''                 );
+
+    let remove = document.createElement('button');
+    remove.setAttribute('type', 'button');
+    remove.id = recipe.id+'_remove';
+    remove.classList.add('remove');
+    remove.append('-');
+
+    let subitemList = document.createElement('ol');
+    subitemList.classList.add('subitem_list');
+    subitemList.id = `${recipe.id}_subitem_list`;
+
+    recipe.append(recipeName);
+    recipe.append(addSubitemButton);
+    recipe.append(quantity  );
+    recipe.append(remove    );
+    recipe.append(subitemList)
+
+    list.append(recipe      );
+
+    console.log(recipe.id)
+    document.getElementById(recipe.id+'_addSubitem').onclick = function(){addSubitem(recipe)};
+}
+
+function addSubitem(recipe)
+{
+    console.log(`${recipe.id}_subitem_list`);
+
+    let list = document.getElementById(`${recipe.id}_subitem_list`);
+
+    let subitem = document.createElement('li');
+    subitem.classList.add('subitem');
+    /* the subitems index matches with the number in the recipe id */
+    subitem.id = `${recipe.id}_subitem${subitems[recipe.id.slice(6)]++}`;
+
+    let subitemName = document.createElement('input');
+    subitemName.classList.add('subitemName');
+    subitemName.id = recipe.id+subitem.id+'_name';
+    subitemName.setAttribute('name'    , recipe.id+subitem.id+'_name');
+    subitemName.setAttribute('type'           , 'text'               );
+    subitemName.setAttribute('placeholder'    , 'Sub-item'           );
+    
+    let quantity = document.createElement('input');
+    quantity.classList.add('quantity');
+    quantity.id = recipe.id+subitem.id+'_quantity';
+    quantity.setAttribute('name'       , recipe.id+subitem.id+'_quantity');
+    quantity.setAttribute('type'       , 'number'           );
+    quantity.setAttribute('value'      , 0                  );
+    quantity.setAttribute('min'        , 0                  );
+    quantity.setAttribute('max'        , 99                 );
+    quantity.setAttribute('placeholder', 'quantidade'       );
+    quantity.setAttribute('required'   , ''                 );
+
+    let remove = document.createElement('button');
+    remove.setAttribute('type', 'button');
+    remove.id = recipe.id+subitem.id+'_remove';
+    remove.classList.add('remove');
+    remove.append('-');
+
+    subitem.append(subitemName);
+    subitem.append(quantity   );
+    subitem.append(remove     );
+
+    list.append(subitem);
+}
