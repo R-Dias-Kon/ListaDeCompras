@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Ronaldo Dias">
+        <meta name="description" content="Carrinho de compras compativel com receitas">
+        <title>Carrinho de compras</title>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="shopping-cart.png" id="shoppingCartImage">
+            <h1>Carrinho de compras</h1>
+            <h2>compativel com receitas</h2>
+        </header>
+        <div class="container">
+            <form id="lista">
+                <h2>Lista</h2>
+                <ol>
+                    <li class="recipe" id="recipe1" name="recipe1">
+                        <input class="recipeName" id="recipe1_name" name="recipe1_name"
+                        type="text" placeholder="Receita" required>
+
+                        <button type="button" id="recipe1_addSubitem">+</button>
+
+                        <input class="quantity" id="recipe1_quantity" name="recipe1_quantity" 
+                        type="number" value="0" min="0" max="99" 
+                        placeholder="quantidade" required>
+
+                        <button type="button" id="recipe1_remove" class="remove">-</button>
+                        <ol class="subitem_list" id="recipe1_subitem_list">
+                            <li class="subitem" id="recipe1_subitem1" name="recipe1_subitem1">
+                                <input class="subitemName" id="recipe1_subitem1_name" name="recipe1_subitem1_name"
+                                type="text" placeholder="sub-item">
+
+                                <input class="quantity" id="recipe1_subitem1_quantity" name="recipe1_subitem1_quantity" 
+                                type="number" value="0" min="0" max="99" 
+                                placeholder="quantidade" required>
+
+                                <button type="button" id="recipe1_subitem1_remove" class="remove">-</button>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="item" id="item1" name="item1">
+                        <input class="itemName" id="item1_name" name="name"
+                        type="text" placeholder="Item">
+
+                        <input class="quantity" id="item1_quantity" name="item1_quantity" 
+                        type="number" value="0" min="0" max="99" 
+                        placeholder="quantidade" required>
+
+                        <button type="button" id="item1_remove" class="remove">-</button>
+                    </li>
+                </ol>
+                <button type="button" id="addRecipe">Adicionar receita</button>
+                <button type="button" id="addItem">Adicionar item</button>
+                <div class="externalButtons">
+                    <button type="button" id="loadList">Carregar</button>
+                    <button type="button" id="saveList">Salvar</button>
+                    <button type="button" id="exportList">Exportar</button>
+                </div>
+            </form>
+            
+        </div>
+
+        <script src="js/script.js"></script> 
+    </body>
+</html>

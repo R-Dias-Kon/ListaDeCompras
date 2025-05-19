@@ -1,0 +1,104 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+header
+{
+    display: flexbox;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    justify-items: center;
+    align-items: center;
+    min-height: 11vh;
+
+    color: white;
+}
+
+#shoppingCartImage
+{
+    width: 100px;
+}
+
+body
+{
+    display: flexbox;
+    min-height: 100vh;
+    justify-items: center;
+
+    background: linear-gradient(45deg, #01ffb3, #422dfc);
+}
+
+.container
+{
+    padding: 1.66em;
+    width: 28em;
+
+    border-radius: 1.66em;
+
+    background-color: rgba(0, 29, 124, 0.411);
+    color: white;
+}
+
+.subitem_list
+{
+    margin-left:   4em;
+}
+
+.item
+{
+    margin-bottom: 0.66em;
+    margin-top: 0.66em;
+}
+
+.recipeName
+{
+    width: 20.06em;
+}
+.subitemName
+{
+    width: 17.56em;
+}
+.itemName
+{
+    width: 22.36em;
+}
+
+.quantity
+{
+    width: 4em;
+}
+
+.externalButtons button
+{
+    margin-top: 6em;
+    margin-left: 2.4em;
+    margin-right: 2.4em;
+}
+
+h2
+{
+    margin-bottom: 1em;
+}
+
+button, input
+{
+    background-color: white;
+    min-width: 1.66em;
+
+    padding-left:   0.5em;
+    padding-right:  0.5em;
+    padding-top:    0.166em;
+    padding-bottom: 0.166em;
+}
+
+button
+{
+    background-color: cornsilk;
+}
+
+/* Disable bullets in list */
+ol {list-style-type: none;}

@@ -1,0 +1,1 @@
+Carrinho de compras com suporte à receitas para uso pessoal. Você pode carregar, salvar e exportar sua lista. A lista exportada apresenta apenas os ingredientes, com o objetivando simplicidade. # CarrinhoDeCompras

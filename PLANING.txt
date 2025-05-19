@@ -1,0 +1,4 @@
+o Add recipes in list
+o Add items in the recipes
+o Export List
+o Import List
