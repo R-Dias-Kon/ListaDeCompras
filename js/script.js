@@ -32,19 +32,20 @@ function addItem(e)
     quantity.setAttribute('placeholder', 'quantidade'       );
     quantity.setAttribute('required'   , ''                 );
 
-    let remove = document.createElement('button');
-    remove.setAttribute('type', 'button');
-    remove.id = item.id+'_remove';
-    remove.classList.add('remove');
-    remove.append('-');
+    let removeButton = document.createElement('button');
+    removeButton.setAttribute('type', 'button');
+    removeButton.id = item.id+'_remove';
+    removeButton.classList.add('remove');
+    removeButton.append('-');
 
-    item.append(itemName);
-    item.append(quantity);
-    item.append(remove  );
+    removeButton.onclick = function(){removeElementById(item.id)};
 
-    list.append(item    );
+    item.append(itemName    );
+    item.append(quantity    );
+    item.append(removeButton);
 
-    console.log(items, recipes, subitems);
+    list.append(item        );
+
 }
 
 document.getElementById('addRecipe').onclick = addRecipe;
@@ -83,21 +84,23 @@ function addRecipe(e)
     quantity.setAttribute('placeholder', 'quantidade'       );
     quantity.setAttribute('required'   , ''                 );
 
-    let remove = document.createElement('button');
-    remove.setAttribute('type', 'button');
-    remove.id = recipe.id+'_remove';
-    remove.classList.add('remove');
-    remove.append('-');
+    let removeButton = document.createElement('button');
+    removeButton.setAttribute('type', 'button');
+    removeButton.id = recipe.id+'_remove';
+    removeButton.classList.add('remove');
+    removeButton.append('-');
 
     let subitemList = document.createElement('ol');
     subitemList.classList.add('subitem_list');
     subitemList.id = `${recipe.id}_subitem_list`;
 
-    recipe.append(recipeName);
+    removeButton.onclick = function(){removeElementById(recipe.id)};
+
+    recipe.append(recipeName      );
     recipe.append(addSubitemButton);
-    recipe.append(quantity  );
-    recipe.append(remove    );
-    recipe.append(subitemList)
+    recipe.append(quantity        );
+    recipe.append(removeButton    );
+    recipe.append(subitemList     );
 
     list.append(recipe      );
 
@@ -134,15 +137,22 @@ function addSubitem(recipe)
     quantity.setAttribute('placeholder', 'quantidade'       );
     quantity.setAttribute('required'   , ''                 );
 
-    let remove = document.createElement('button');
-    remove.setAttribute('type', 'button');
-    remove.id = recipe.id+subitem.id+'_remove';
-    remove.classList.add('remove');
-    remove.append('-');
+    let removeButton = document.createElement('button');
+    removeButton.setAttribute('type', 'button');
+    removeButton.id = recipe.id+subitem.id+'_remove';
+    removeButton.classList.add('remove');
+    removeButton.append('-');
 
-    subitem.append(subitemName);
-    subitem.append(quantity   );
-    subitem.append(remove     );
+    removeButton.onclick = function(){removeElementById(subitem.id)};
+
+    subitem.append(subitemName );
+    subitem.append(quantity    );
+    subitem.append(removeButton);
 
     list.append(subitem);
+}
+
+function removeElementById(id)
+{
+    document.getElementById(id).remove();
 }
