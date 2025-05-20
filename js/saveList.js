@@ -75,7 +75,10 @@ function saveList()
     let date = new Date();
 
     newdate = date.getUTCDate() + "-" + date.getMonth() + "-" + date.getFullYear();
-    const fileName = 'Lista_de_mercado_SAVE_' + newdate + '.json'; // The file to save the data.
+    let fileName = 'Lista_de_mercado_SAVE_' + newdate + '.json'; // The file to save the data.
+
+    if (document.getElementById('listTitle').value != '')
+        fileName = document.getElementById('listTitle').value + '_SAVE.json';
     
     let newLink = document.createElement('a');
 

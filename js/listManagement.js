@@ -27,7 +27,7 @@ function addItem()
     quantity.setAttribute('type'       , 'number'           );
     quantity.setAttribute('value'      , 0                  );
     quantity.setAttribute('min'        , 0                  );
-    quantity.setAttribute('max'        , 99                 );
+    quantity.setAttribute('max'        , 99999              );
     quantity.setAttribute('placeholder', 'quantidade'       );
     quantity.setAttribute('required'   , ''                 );
 
@@ -81,7 +81,7 @@ function addRecipe()
     quantity.setAttribute('type'       , 'number'           );
     quantity.setAttribute('value'      , 0                  );
     quantity.setAttribute('min'        , 0                  );
-    quantity.setAttribute('max'        , 99                 );
+    quantity.setAttribute('max'        , 9999               );
     quantity.setAttribute('placeholder', 'quantidade'       );
     quantity.setAttribute('required'   , ''                 );
 
@@ -132,12 +132,12 @@ function addSubitem(recipe)
     quantity.classList.add('quantity');
     quantity.id = subitem.id+'_quantity';
     quantity.setAttribute('name'       , subitem.id+'_quantity');
-    quantity.setAttribute('type'       , 'number'                        );
-    quantity.setAttribute('value'      , 0                               );
-    quantity.setAttribute('min'        , 0                               );
-    quantity.setAttribute('max'        , 99                              );
-    quantity.setAttribute('placeholder', 'quantidade'                    );
-    quantity.setAttribute('required'   , ''                              );
+    quantity.setAttribute('type'       , 'number'              );
+    quantity.setAttribute('value'      , 0                     );
+    quantity.setAttribute('min'        , 0                     );
+    quantity.setAttribute('max'        , 99999                 );
+    quantity.setAttribute('placeholder', 'quantidade'          );
+    quantity.setAttribute('required'   , ''                    );
 
     let removeButton = document.createElement('button');
     removeButton.setAttribute('type', 'button'           );
