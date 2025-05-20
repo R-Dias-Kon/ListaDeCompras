@@ -95,11 +95,11 @@ body
     width: 4em;
 }
 
-.externalButtons button
+.externalActions button
 {
     margin-top: 6em;
-    margin-left: 2.4em;
-    margin-right: 2.4em;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
 }
 
 h2

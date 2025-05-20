@@ -12,13 +12,16 @@ function exportList()
         let subitem = subitems.item(i);
 
         subitemName      = document.getElementById(subitem.id+'_name').value;
-        subitemQuantity  = document.getElementById(subitem.id+'_quantity').value;
+        subitemQuantity  = Number(document.getElementById(subitem.id+'_quantity').value);
             /* multiply by recipe quantity */
             console.log(subitem.id.substring(0, subitem.id.indexOf('_')));
         subitemQuantity *= document.getElementById(subitem.id.substring(0, subitem.id.indexOf('_'))+'_quantity').value;
 
         if (subitemQuantity > 0)
-            totalItems[subitemName] = subitemQuantity;
+            if (totalItems[subitemName] == null)
+                totalItems[subitemName] = subitemQuantity;
+            else
+                totalItems[subitemName] += subitemQuantity;
     }
         /* take every item*/
     let items = document.getElementsByClassName('item');
@@ -27,10 +30,13 @@ function exportList()
         let item = items.item(i);
 
         itemName      = document.getElementById(item.id+'_name').value;
-        itemQuantity  = document.getElementById(item.id+'_quantity').value;
+        itemQuantity  = Number(document.getElementById(item.id+'_quantity').value);
 
         if (itemQuantity > 0)
-            totalItems[itemName] = itemQuantity;
+            if (totalItems[itemName] == null)
+                totalItems[itemName] = itemQuantity;
+            else
+                totalItems[itemName] += itemQuantity;
     }
 
     /* agreggate everything into a single string */
@@ -47,7 +53,9 @@ function exportList()
     let date = new Date();
 
     newdate = date.getUTCDate() + "-" + date.getMonth() + "-" + date.getFullYear();
-    const fileName = 'Lista_de_mercado_' + newdate + '.txt'; // The file to save the data.
+    let fileName = 'Lista_de_mercado_' + newdate + '.txt'; // The file to save the data.
+    if (document.getElementById('listTitle').value != '')
+        fileName = document.getElementById('listTitle').value;
     
     let newLink = document.createElement("a");
     newLink.download = fileName;

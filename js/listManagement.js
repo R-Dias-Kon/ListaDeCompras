@@ -4,10 +4,8 @@ let recipes = 0;
 let subitems = {};
 
 document.getElementById('addItem').onclick = addItem;
-function addItem(e)
+function addItem()
 {
-    e.preventDefault();
-
     let list = document.getElementById('list');
 
     let item = document.createElement('li');
@@ -48,13 +46,12 @@ function addItem(e)
 
     list.append(item        );
 
+    return item.id;
 }
 
 document.getElementById('addRecipe').onclick = addRecipe;
-function addRecipe(e)
+function addRecipe()
 {
-    e.preventDefault();
-
     let list = document.getElementById('list');
 
     let recipe = document.createElement('li');
@@ -110,6 +107,8 @@ function addRecipe(e)
     list.append(recipe      );
 
     document.getElementById(recipe.id+'_addSubitem').onclick = function(){addSubitem(recipe)};
+
+    return recipe.id;
 }
 
 function addSubitem(recipe)
@@ -154,6 +153,8 @@ function addSubitem(recipe)
     subitem.append(removeButton);
 
     list.append(subitem);
+
+    return subitem.id;
 }
 
 function removeElementById(id)

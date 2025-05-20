@@ -77,14 +77,15 @@ function saveList()
     newdate = date.getUTCDate() + "-" + date.getMonth() + "-" + date.getFullYear();
     const fileName = 'Lista_de_mercado_SAVE_' + newdate + '.json'; // The file to save the data.
     
-    let newLink = document.createElement("a");
+    let newLink = document.createElement('a');
+
     newLink.download = fileName;
 
     if (window.webkitURL != null) {
         newLink.href = window.webkitURL.createObjectURL(textToBLOB);
     } else {
         newLink.href = window.URL.createObjectURL(textToBLOB);
-        newLink.style.display = "none";
+        newLink.style.display = 'none';
         document.body.appendChild(newLink);
     }
 

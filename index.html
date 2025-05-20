@@ -18,14 +18,16 @@
         </header>
         <div class="container">
             <form>
-                <input type="text" class="listTitle" id="listTitle" name="listTitle" placeholder="Nome da lista">
+                <input type="text" class="listTitle" id="listTitle" name="listTitle" placeholder="Nome da lista" required>
                 <ol class="list" id="list">
                     
                 </ol>
                 <button type="button" id="addRecipe">Adicionar receita</button>
                 <button type="button" id="addItem">Adicionar item</button>
-                <div class="externalButtons">
-                    <button type="button" id="loadList">Carregar</button>
+                <div class="externalActions">
+                    <input type="file" id="inputFile" style="display:none;">
+                    <button type="button" id="loadFile">Subir Arquivo</button>
+                    <button type="button" id="loadList" disabled>Carregar</button>
                     <button type="button" id="saveList">Salvar</button>
                     <button type="button" id="exportList">Exportar</button>
                 </div>
