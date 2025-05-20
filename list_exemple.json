@@ -1,0 +1,18 @@
+[
+    {
+        "type" : "recipe",
+        "name" : "Receita1",
+        "quantity" : 2,
+        "subitems" : 
+        [
+            {"name" : "Subitem1","quantity" : 2},
+            {"name" : "Subitem2","quantity" : 2}
+        ]
+    },
+
+    {
+        "type" : "item",
+        "name" : "Item1",
+        "quantity" : 3
+    }
+]

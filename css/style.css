@@ -9,8 +9,8 @@
 header
 {
     display: flexbox;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     justify-items: center;
     align-items: center;
     min-height: 11vh;
@@ -32,6 +32,20 @@ body
     background: linear-gradient(45deg, #01ffb3, #422dfc);
 }
 
+.listTitle
+{
+    font-weight: 700;
+    font-family: 'Segoe UI';
+    font-size: x-large;
+    color: white;
+    width: 16.4em;
+    margin-bottom: 0.66em;
+    background-color: rgba(0,0,0,0);
+    border-top: rgba(0,0,0,0);
+    border-left: rgba(0,0,0,0);
+    border-right: rgba(0,0,0,0);
+}
+
 .container
 {
     padding: 1.66em;
@@ -45,7 +59,8 @@ body
 
 .subitem_list
 {
-    margin-left:   4em;
+    margin-top: 0.33em;
+    margin-left: 4em;
 }
 
 .item, .recipe
@@ -54,17 +69,25 @@ body
     margin-top: 0.66em;
 }
 
+.recipeName, .subitemName, .itemName
+{
+    background-color: rgba(0, 0, 90, 0.411);
+    border: rgba(0,0,0,0);
+    color: white;
+    font-size: medium;
+}
+
 .recipeName
 {
-    width: 21.93em;
+    width: 18.28em;
 }
 .subitemName
 {
-    width: 19.12em;
+    width: 15.93em;
 }
 .itemName
 {
-    width: 23.9em;
+    width: 19.93em;
 }
 
 .quantity

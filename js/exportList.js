@@ -47,7 +47,7 @@ function exportList()
     let date = new Date();
 
     newdate = date.getUTCDate() + "-" + date.getMonth() + "-" + date.getFullYear();
-    const fileName = 'Lista_de_mercado_' + newdate; // The file to save the data.
+    const fileName = 'Lista_de_mercado_' + newdate + '.txt'; // The file to save the data.
     
     let newLink = document.createElement("a");
     newLink.download = fileName;

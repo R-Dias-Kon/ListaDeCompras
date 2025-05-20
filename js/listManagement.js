@@ -34,7 +34,8 @@ function addItem(e)
     quantity.setAttribute('required'   , ''                 );
 
     let removeButton = document.createElement('button');
-    removeButton.setAttribute('type', 'button');
+    removeButton.setAttribute('type', 'button'       );
+    removeButton.setAttribute('title', 'Remover item');
     removeButton.id = item.id+'_remove';
     removeButton.classList.add('remove');
     removeButton.append('-');
@@ -70,7 +71,8 @@ function addRecipe(e)
     recipeName.setAttribute('required'   , ''                 );
     
     let addSubitemButton = document.createElement('button');
-    addSubitemButton.setAttribute('type', 'button');
+    addSubitemButton.setAttribute('type', 'button'             );
+    addSubitemButton.setAttribute('title', 'Adicionar sub-item');
     addSubitemButton.id = recipe.id+'_addSubitem';
     addSubitemButton.classList.add('addSubitem');
     addSubitemButton.append('+');
@@ -87,7 +89,8 @@ function addRecipe(e)
     quantity.setAttribute('required'   , ''                 );
 
     let removeButton = document.createElement('button');
-    removeButton.setAttribute('type', 'button');
+    removeButton.setAttribute('type', 'button'          );
+    removeButton.setAttribute('title', 'Remover receita');
     removeButton.id = recipe.id+'_remove';
     removeButton.classList.add('remove');
     removeButton.append('-');
@@ -138,7 +141,8 @@ function addSubitem(recipe)
     quantity.setAttribute('required'   , ''                              );
 
     let removeButton = document.createElement('button');
-    removeButton.setAttribute('type', 'button');
+    removeButton.setAttribute('type', 'button'           );
+    removeButton.setAttribute('title', 'Remover sub-item');
     removeButton.id = recipe.id+subitem.id+'_remove';
     removeButton.classList.add('remove');
     removeButton.append('-');
