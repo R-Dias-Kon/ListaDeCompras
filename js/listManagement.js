@@ -20,6 +20,7 @@ function addItem(e)
     itemName.setAttribute('name'    , item.id+'_name'       );
     itemName.setAttribute('type'           , 'text'         );
     itemName.setAttribute('placeholder'    , 'Item'         );
+    itemName.setAttribute('required'   , ''                 );
     
     let quantity = document.createElement('input');
     quantity.classList.add('quantity');
@@ -66,6 +67,7 @@ function addRecipe(e)
     recipeName.setAttribute('name'    , recipe.id+'_name'   );
     recipeName.setAttribute('type'           , 'text'       );
     recipeName.setAttribute('placeholder'    , 'Receita'    );
+    recipeName.setAttribute('required'   , ''                 );
     
     let addSubitemButton = document.createElement('button');
     addSubitemButton.setAttribute('type', 'button');
@@ -104,14 +106,11 @@ function addRecipe(e)
 
     list.append(recipe      );
 
-    console.log(recipe.id)
     document.getElementById(recipe.id+'_addSubitem').onclick = function(){addSubitem(recipe)};
 }
 
 function addSubitem(recipe)
 {
-    console.log(`${recipe.id}_subitem_list`);
-
     let list = document.getElementById(`${recipe.id}_subitem_list`);
 
     let subitem = document.createElement('li');
@@ -121,21 +120,22 @@ function addSubitem(recipe)
 
     let subitemName = document.createElement('input');
     subitemName.classList.add('subitemName');
-    subitemName.id = recipe.id+subitem.id+'_name';
-    subitemName.setAttribute('name'    , recipe.id+subitem.id+'_name');
+    subitemName.id = subitem.id+'_name';
+    subitemName.setAttribute('name'    , subitem.id+'_name');
     subitemName.setAttribute('type'           , 'text'               );
     subitemName.setAttribute('placeholder'    , 'Sub-item'           );
+    subitemName.setAttribute('required'   , ''                       );
     
     let quantity = document.createElement('input');
     quantity.classList.add('quantity');
-    quantity.id = recipe.id+subitem.id+'_quantity';
-    quantity.setAttribute('name'       , recipe.id+subitem.id+'_quantity');
-    quantity.setAttribute('type'       , 'number'           );
-    quantity.setAttribute('value'      , 0                  );
-    quantity.setAttribute('min'        , 0                  );
-    quantity.setAttribute('max'        , 99                 );
-    quantity.setAttribute('placeholder', 'quantidade'       );
-    quantity.setAttribute('required'   , ''                 );
+    quantity.id = subitem.id+'_quantity';
+    quantity.setAttribute('name'       , subitem.id+'_quantity');
+    quantity.setAttribute('type'       , 'number'                        );
+    quantity.setAttribute('value'      , 0                               );
+    quantity.setAttribute('min'        , 0                               );
+    quantity.setAttribute('max'        , 99                              );
+    quantity.setAttribute('placeholder', 'quantidade'                    );
+    quantity.setAttribute('required'   , ''                              );
 
     let removeButton = document.createElement('button');
     removeButton.setAttribute('type', 'button');
